@@ -1,0 +1,75 @@
+SirHuuskonen@Johannas-MacBook ot_viikko1 % git log --stat | cat 
+commit 44fe96392bf82045524a7f2e1116c91b57ae6195
+Author: Erik Huuskonen <eh.huuskonen@gmail.com>
+Date:   Wed Mar 15 15:49:12 2023 +0200
+    Poista file1 ja uudelleennimeä file2 nimellä file22
+ tiedostoja/{file1 => file22} | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+commit f3daf0c00f324f4a5e09f6fb6d55d7fe79ad014d
+Author: Erik Huuskonen <eh.huuskonen@gmail.com>
+Date:   Wed Mar 15 15:47:12 2023 +0200
+    Lisää tiedostoja-hakemisto ja sen sisältämät tiedostot
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+commit 768b3aa78deb0fda291086ce59a2c05aa7197956
+Author: Erik Huuskonen <eh.huuskonen@gmail.com>
+Date:   Wed Mar 15 15:35:25 2023 +0200
+    Tehtiin muutoksia ja poistettiin, git add -p done
+ eka.txt      |  5 +++--
+ kolmas.txt   |  3 ++-
+ tiedosto.txt | 11 -----------
+ 3 files changed, 5 insertions(+), 14 deletions(-)
+commit 82eafc216e34fdc773d3bd91329c260ee75a9def
+Author: Erik Huuskonen <eh.huuskonen@gmail.com>
+Date:   Wed Mar 15 15:31:10 2023 +0200
+    Poista toinen.txt ja uudelleennimeä tiedosto.txt eka.txt:ksi
+ eka.txt    | 11 +++++++++++
+ toinen.txt |  1 -
+ 2 files changed, 11 insertions(+), 1 deletion(-)
+commit df0e3153645a23879d66c83a6344043fa5a75e1d
+Author: Erik Huuskonen <eh.huuskonen@gmail.com>
+Date:   Wed Mar 15 14:47:40 2023 +0200
+    poistin ja lisäsin
+ tiedosto.txt | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+commit 018d4a9b09d7bba9866e1682786edc8d24c41bf5
+Author: Erik Huuskonen <eh.huuskonen@gmail.com>
+Date:   Wed Mar 15 14:45:41 2023 +0200
+    tiedosto.txt sai lisää täytettä
+ tiedosto.txt | 12 +++++++++++-
+ 1 file changed, 11 insertions(+), 1 deletion(-)
+commit b2bcb5b02724ca38d6eaed43145db80b9e7a3915
+Author: Erik Huuskonen <erik.ilkanpoika.huuskonen@gmail.com>
+Date:   Wed Mar 15 14:21:32 2023 +0200
+    stuff ja jokin tiedosto
+ stuff/jokintiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+commit 6fa60f2b01666179dfa730aebff914b93cf0c847
+Author: Erik Huuskonen <erik.ilkanpoika.huuskonen@gmail.com>
+Date:   Wed Mar 15 14:19:58 2023 +0200
+    muutettu toinen ja kolmas.txt ja commitoitu
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+commit 1212acaf8186654d9e46e20f7d573ef1ecdc8e47
+Author: Erik Huuskonen <erik.ilkanpoika.huuskonen@gmail.com>
+Date:   Wed Mar 15 14:18:09 2023 +0200
+    kolmas.txt luotu ja commitoitu
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+commit 8574fde296d0469f629c93306a59fccd3522bfce
+Author: Erik Huuskonen <erik.ilkanpoika.huuskonen@gmail.com>
+Date:   Wed Mar 15 14:15:49 2023 +0200
+    muutos ja lisäys
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+commit 143245d655ba4963680e297262b47b16e4762cd1
+Author: Erik Huuskonen <erik.ilkanpoika.huuskonen@gmail.com>
+Date:   Wed Mar 15 14:13:06 2023 +0200
+    tiedosto.txt luotu
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
