@@ -22,3 +22,5 @@
    -[tests](https://github.com/ErikHuuskonen/ot-harjoitustyo/tree/main/laskarit/viikko2/unicafe/src/tests)
 
 [kattavuusraportti](https://github.com/ErikHuuskonen/ot-harjoitustyo/blob/main/laskarit/viikko2/kattavuusraportti.png)
+
+### Viikko 3
