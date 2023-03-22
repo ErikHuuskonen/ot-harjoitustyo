@@ -2,7 +2,7 @@
 Titetotila on säännölliseen tiedon omaksumiseen liittyvien päätösten tekemisen tueksi kehitetty yksinkertainen mind-map tyylinen apuohjelma. Tietotilan toiminnallisuuden takana on tavoite havainnollistaa, tarjota muistityökaluja ja pitää kirjaa juuri sinulle tärkeistä konsepteista. Lisäksi sovelluksen tavoite on visualisoida tiedon omaksumisen kehittymistä ja suuntaa. Yksinkertaisesti ilmaistuna tietotila tarjoaa visuaalisen käyttöliittymän kohtaamaasi informaatioon ja auttaa sinua kehittämään polkuja tämän informaation palauttamiseksi työmuistiin, ajattelusi tueksi. 
 
 # Käyttöliittymäluonnos
-kuva
+![](https://github.com/ErikHuuskonen/ot-harjoitustyo/blob/main/dokumentaatio/Ka%CC%88ytto%CC%88liittyma%CC%88luonnos.png)
 
 # Toiminnallisuus
 -Ensimmäisessä vaiheessa käyttäjä luo itselleen profiilin sovellukseen. Profiilin tarkoituksena on erotella laitteen ja sovelluksen mahdolliset käyttäjät ja heidän tekemät muutoksensa. 
