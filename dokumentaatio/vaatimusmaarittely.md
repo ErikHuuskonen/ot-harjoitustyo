@@ -13,7 +13,7 @@ kuva
 
 -Neljännessä vaiheessa käyttäjä on valinnut mind-map tiedoston jonka keskiössä on tiedoston otsikko ja käyttäjä voi laajentaa visuaalista kuvausta kohtaamastaan informaatiosta. 
 
-#Jatkokehitys
+# Jatkokehitys
 Ajan sanelemana seuraavia toiminnallisuuksia on mahdollista lisätä:
 
 1.Jokainen mind-map node on muistikortti pakka
