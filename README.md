@@ -1,6 +1,10 @@
 
 # Ohjelmistotekniikka, harjoitustyö
 
+[työaikakirjanpito](https://github.com/ErikHuuskonen/ot-harjoitustyo/blob/main/dokumentaatio/tyoaikakirjanpito.md)
+
+
+
 ## Tehtävät
 
 ### Viikko 1
