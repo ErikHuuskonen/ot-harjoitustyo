@@ -17,9 +17,13 @@ kuva
 Ajan sanelemana seuraavia toiminnallisuuksia on mahdollista lisätä:
 
 1.Jokainen mind-map node on muistikortti pakka
+
 2.Muistikortteja voi harjoitella [unohtamiskäyrää](https://en.wikipedia.org/wiki/Forgetting_curve) mukailevan algoritmin avulla.
+
 3.3D mind-map
+
 4.Node väri pohjautuu active recall menestykseen unohtamiskäyrän ja harjoittelun sanelemana.
+
 5.Toiminnallisuus, missä erikseen harjoitellaan kokonaisuuksia yksittäisiä muistikortteja sattumanvaraisesti valitsemalla ja kysymällä siihen linkittyviä toisia muistikortteja. 
 
 
