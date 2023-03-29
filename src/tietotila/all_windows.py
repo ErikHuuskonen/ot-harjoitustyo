@@ -96,7 +96,7 @@ class Mindmap(QWidget):
         pen = QPen(Qt.black, 2, Qt.SolidLine)
         painter.setPen(pen)
 
-        # Draw connections
+        
         for connection in self.connections:
             start_node = connection['start_node']
             end_node = connection['end_node']
@@ -105,10 +105,10 @@ class Mindmap(QWidget):
                             (end_node['x'] * self.scale_factor) + self.offset_x + end_node['width'] / 2,
                             (end_node['y'] * self.scale_factor) + self.offset_y + end_node['height'] / 2)
 
-        # Draw master node
+    
         self.draw_node(painter, self.master_node)
 
-        # Draw child nodes
+   
         for child_node in self.child_nodes:
             self.draw_node(painter, child_node)
 
@@ -123,24 +123,24 @@ class Mindmap(QWidget):
         x = (node['x'] * self.scale_factor) + self.offset_x
         y = (node['y'] * self.scale_factor) + self.offset_y
 
-        # Define the maximum width for the node
+    
         max_width = 30000
 
-        # Calculate the size required for the text
+       
         wrapped_text = painter.fontMetrics().elidedText(node['name'], Qt.TextElideMode.ElideRight, max_width, Qt.TextWordWrap)
         text_rect = painter.fontMetrics().boundingRect(QRect(x, y, max_width, 0), Qt.TextWordWrap | Qt.AlignLeft, wrapped_text)
         text_width = text_rect.width()
         text_height = text_rect.height()
 
-        # Add some padding around the text
+      
         padding = 20
         node['width'] = text_width + padding
         node['height'] = text_height + padding
 
-        # Draw the rectangle based on the calculated width and height
+       
         painter.drawRect(x, y, node['width'], node['height'])
 
-        # Draw the text inside the rectangle
+        
         painter.drawText(x + padding / 2, y + padding / 2, max_width, text_height, Qt.AlignLeft | Qt.TextWordWrap, wrapped_text)
     
     
@@ -160,19 +160,19 @@ class Mindmap(QWidget):
             clicked_node = self.get_node_at_position(event.pos())
 
             if clicked_node is not None:
-                # If a node is double-clicked, show a text input dialog to update its text
+                
                 input_dialog = QInputDialog(self)
                 input_dialog.setWindowTitle("Edit Node Text")
                 input_dialog.setLabelText("Enter new text:")
                 input_dialog.setTextValue(clicked_node['name'])
-                input_dialog.resize(QSize(1200, 2000))  # Set the size of the input dialog
+                input_dialog.resize(QSize(1200, 2000))  
                 ok = input_dialog.exec_()
                 new_text = input_dialog.textValue()
                 if ok:
                     clicked_node['name'] = new_text
             
             else:
-                # If the background is double-cglicked, create a new node
+                
                 new_node = {'name': 'New Node',
                             'x': (event.x() - self.offset_x) / self.scale_factor - 50,
                             'y': (event.y() - self.offset_y) / self.scale_factor - 50,
@@ -204,7 +204,7 @@ class Mindmap(QWidget):
             self.panning = False
             self.update()
 
-    def wheelEvent(self, event): #ei toimi
+    def wheelEvent(self, event): 
         angle = event.angleDelta().y()
         if angle > 0:
             self.scale_factor *= 1.5
