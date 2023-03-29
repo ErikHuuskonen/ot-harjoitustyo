@@ -8,10 +8,16 @@ packages = [{include = "ot_harjoitustyo"}]
 
 [tool.poetry.dependencies]
 python = "^3.8"
+pyqt5 = "^5.15.9"
+pytest = "^7.2.2"
 
 
 [tool.poetry.group.dev.dependencies]
 coverage = "^7.2.2"
+pytest-qt = "^4.2.0"
+
+[tool.pytest.ini_options]
+qt_api = "pyqt5"
 
 [build-system]
 requires = ["poetry-core"]
