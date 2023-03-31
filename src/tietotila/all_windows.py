@@ -1,10 +1,11 @@
 import os
-from PyQt5.QtWidgets import QLabel, QVBoxLayout, QWidget, QApplication, QInputDialog
+from PyQt5.QtWidgets import QLabel, QVBoxLayout, QWidget, QApplication, QInputDialog, QPushButton, QHBoxLayout, QVBoxLayout
 from PyQt5.QtCore import Qt, QRect, QSize
-from PyQt5.QtGui import QPixmap, QColor, QPalette
-from PyQt5.QtWidgets import QWidget
+from PyQt5.QtGui import QPixmap, QColor, QPalette, QFont, QPen, QPainter
+from PyQt5.QtWidgets import QWidget, QApplication
 from PyQt5.QtGui import QPainter, QColor, QPen, QFont
-from PyQt5.QtCore import Qt
+import sqlite3
+
 
 
 class Start(QWidget):
@@ -39,40 +40,124 @@ class Start(QWidget):
         resource_file = os.path.join(resources_dir, 'tietotila_startingscreen.jpg')
         return resource_file
 
-#lisätään central widgettiin ominaisuuksia
-
 class Users(QWidget):
     def __init__(self):
         super().__init__()
         self.init_ui()
+        self.users_list = []
+        self.empty()
 
     def init_ui(self):
-        self.layout = QVBoxLayout()
-        self.setLayout(self.layout)
-    
-    def empty(self):
-        pass
-    
-    def new(self):
-        pass
-    
-    def changes(self):
-        pass
+        self.layout = QVBoxLayout(self)
+        self.hbox_layout = QHBoxLayout()
+        self.layout.addLayout(self.hbox_layout)
 
-class Main(QWidget): 
+    def empty(self):
+        button = QPushButton("Uusi käyttäjä")
+        button.setObjectName("Uusi käyttäjä")
+        button.setFixedSize(300, 300)
+        button.setStyleSheet("""
+            QPushButton {
+                background-color: grey;
+                color: yellow;
+                font-size: 54px;
+                border-radius: 100px;
+            }
+            QPushButton:hover {
+                background-color: white;
+            }
+        """)
+        button.clicked.connect(self.empty_button_clicked)
+        #button.setStyleSheet("padding: 0; margin: 0;")
+        self.hbox_layout.setAlignment(Qt.AlignLeft)
+        self.add_button_to_layout(button)
+
+    def empty_button_clicked(self):
+        self.create_new_button()
+
+    def create_new_button(self):
+        text, ok = QInputDialog.getText(self, "Luo käyttäjä", "Käyttäjänimi:")
+        
+        if ok:
+            new_button = QPushButton(text)
+            new_button.setFixedSize(300, 300)
+            new_button.setStyleSheet("""
+            QPushButton {
+                background-color: grey;
+                color: yellow;
+                font-size: 54px;
+                border-radius: 100px;
+            }
+            QPushButton:hover {
+                background-color: white;
+            }
+        """)
+            self.users_list.append(str(new_button))
+            self.add_button_to_layout(new_button)
+            
+    
+    def add_button_to_layout(self, button):
+        self.hbox_layout.addWidget(button)
+        print(self.users_list)
+        
+
+class Documents(QWidget): 
     def __init__(self):
         super().__init__()
         self.init_ui()
+        self.documents_list = []
+        self.empty()
 
     def init_ui(self):
-        self.layout = QVBoxLayout()
-        self.label = QLabel("This is the Main screen")
-        self.layout.addWidget(self.label)
-        self.setLayout(self.layout)
+        self.layout = QVBoxLayout(self)
+        self.hbox_layout = QHBoxLayout()
+        self.layout.addLayout(self.hbox_layout)
 
-from PyQt5.QtCore import Qt
-from PyQt5.QtGui import QColor, QFont, QPen, QPainter
-from PyQt5.QtWidgets import QApplication, QWidget
+    def empty(self):
+        button = QPushButton("Uusi tietotila")
+        button.setFixedSize(300, 300)
+        button.setStyleSheet("""
+            QPushButton {
+                background-color: grey;
+                color: yellow;
+                font-size: 54px;
+                border-radius: 100px;
+            }
+            QPushButton:hover {
+                background-color: white;
+            }
+        """)
+        button.clicked.connect(self.empty_button_clicked)
+        self.hbox_layout.setAlignment(Qt.AlignCenter)
+        self.add_button_to_layout(button)
+
+    def empty_button_clicked(self):
+        self.create_new_button()
+
+    def create_new_button(self):
+        text, ok = QInputDialog.getText(self, "Luo tietotila", "Tilan nimi:")
+        
+        if ok:
+            new_button = QPushButton(text)
+            new_button.setFixedSize(300, 300)
+            new_button.setStyleSheet("""
+            QPushButton {
+                background-color: grey;
+                color: yellow;
+                font-size: 54px;
+                border-radius: 100px;
+            }
+            QPushButton:hover {
+                background-color: white;
+            }
+        """)
+            self.documents_list.append(str(new_button))
+            self.add_button_to_layout(new_button)
+            
+    
+    def add_button_to_layout(self, button):
+        self.hbox_layout.addWidget(button)
+        print(self.documents_list)
 
 class Mindmap(QWidget):
     def __init__(self, parent=None):

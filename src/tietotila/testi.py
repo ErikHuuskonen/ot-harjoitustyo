@@ -5,7 +5,7 @@ from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QVBoxLayout, QWid
 from PyQt5.QtCore import Qt
 
 import sys
-from all_windows import Start, Users, Main, Mindmap
+from all_windows import Start, Users, Documents, Mindmap
 
 def main():
     app = QApplication(sys.argv)
@@ -13,6 +13,22 @@ def main():
     main_window = QMainWindow()
     mindmap = Mindmap()
     main_window.setCentralWidget(mindmap)
+    main_window.showFullScreen()
+    sys.exit(app.exec_())
+
+def main_1():
+    app = QApplication(sys.argv)
+    main_window = QMainWindow()
+    users = Users()
+    main_window.setCentralWidget(users)
+    main_window.showFullScreen()
+    sys.exit(app.exec_())
+
+def main_2():
+    app = QApplication(sys.argv)
+    main_window = QMainWindow()
+    main = Documents()
+    main_window.setCentralWidget(main)
     main_window.showFullScreen()
     sys.exit(app.exec_())
 

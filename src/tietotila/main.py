@@ -5,7 +5,7 @@ from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QVBoxLayout, QWid
 from PyQt5.QtCore import Qt
 
 import sys
-from all_windows import Start, Users, Main, Mindmap
+from all_windows import Start, Users, Mindmap
 
 def main():
     #aloitus screen
@@ -15,7 +15,6 @@ def main():
     main_window = QMainWindow()
     start = Start()
     users = Users()
-    main = Main()
     mindmap = Mindmap()
 
     #näytä aloitus näyttö Start
@@ -23,8 +22,8 @@ def main():
     main_window.showFullScreen()
 
     #viiden sekunnin jälkeen näytetään Users
-    QTimer.singleShot(5000, lambda: main_window.setCentralWidget(mindmap))
-
+    QTimer.singleShot(5000, lambda: main_window.setCentralWidget(users))
+    
     #users näyttää keskellä näyttöä neliskulmaisen harmaan napin jota painamalla voimme kirjoittaa uuden käyttäjän nimen ja tämä asetus astuu voimaan.
     
     #nyt voimme valita käyttäjän ja sen sisälle avautuu valikko jonka sisällä on neljä vaihtoehtoista tiedon arkistoa.
