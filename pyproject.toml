@@ -4,13 +4,14 @@ version = "0.1.0"
 description = "Tietotila_sovellus"
 authors = ["Erik Huuskonen <eh.huuskonen@gmail.com>"]
 readme = "README.md"
-packages = [{include = "ot_harjoitustyo"}]
+packages = [{include = "src"}] 
 
 [tool.poetry.dependencies]
 python = "^3.8"
 pytest = "^7.2.2"
 invoke = "^2.0.0"
 pyqt5 = "^5.15.9"
+pyqt5-qt5 = "^5.15.2"
 
 
 [tool.poetry.group.dev.dependencies]
