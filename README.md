@@ -14,29 +14,29 @@ Tietotila on säännölliseen tiedon omaksumiseen tarkoitettu mindmapien ja muis
 
 1. Asenna riippuvuudet komennolla: 
 
-'''bash
+```bash
 poetry install
-'''
+```
 
 2. Sovelluksen käynnistäminen komennolla:
 
-'''bash
+```bash
 poetry run invoke start
-'''
+```
 
 ## Testit
 
 Voit testa ohjelman komennolla: 
 
-'''bash
+```bash
 poetry run invoke test
-'''
+```
 
 Testikattavuusraportti komennolla: 
 
-'''bash
+```bash
 poetry run invoke coverage-report
-'''
+```
 
 
 
