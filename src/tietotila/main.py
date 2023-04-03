@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
-from all_windows import MainWindow
+from mindmapapp import MindmapApp
 
-app = MainWindow()
-app.window.mainloop()
+app = MindmapApp()
+app.run()
