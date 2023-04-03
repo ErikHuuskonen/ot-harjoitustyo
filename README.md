@@ -7,7 +7,6 @@ Tietotila on säännölliseen tiedon omaksumiseen tarkoitettu mindmapien ja muis
 
 - [työaikakirjanpito](https://github.com/ErikHuuskonen/ot-harjoitustyo/blob/main/dokumentaatio/tyoaikakirjanpito.md)
 - [vaatimusmäärittely](https://github.com/ErikHuuskonen/ot-harjoitustyo/blob/main/dokumentaatio/vaatimusmaarittely.md)
-- [työaikakirjanpito](https://github.com/ErikHuuskonen/ot-harjoitustyo/blob/main/dokumentaatio/tyoaikakirjanpito.md)
 - [chanelog](https://github.com/ErikHuuskonen/ot-harjoitustyo/blob/main/dokumentaatio/changelog.md)
 
 ## Asennus 
