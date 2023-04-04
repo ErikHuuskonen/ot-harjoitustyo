@@ -9,15 +9,23 @@ Tietotila on säännölliseen tiedon omaksumiseen tarkoitettu mindmapien ja muis
 - [vaatimusmäärittely](https://github.com/ErikHuuskonen/ot-harjoitustyo/blob/main/dokumentaatio/vaatimusmaarittely.md)
 - [chanelog](https://github.com/ErikHuuskonen/ot-harjoitustyo/blob/main/dokumentaatio/changelog.md)
 
-## Asennus 
+## Asennus ja käyttö
 
-1. Asenna riippuvuudet komennolla: 
+1. Lataa repositorio /tmp hakemistoon:
+
+```bash
+cd /tmp
+mkdir tietotila
+cd tietotila
+git clone https://github.com/ErikHuuskonen/ot-harjoitustyo.git
+```
+2. Asenna riippuvuudet komennolla: 
 
 ```bash
 poetry install
 ```
 
-2. Sovelluksen käynnistäminen komennolla:
+3. Sovelluksen käynnistäminen komennolla:
 
 ```bash
 poetry run invoke start
