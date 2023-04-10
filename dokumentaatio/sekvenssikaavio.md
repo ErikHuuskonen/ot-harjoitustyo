@@ -1,26 +1,26 @@
 ```mermaid
 sequenceDiagram
-    participant User
+    participant Käyttäjä
     participant MindmapApp
     participant UserSelectionScreen
     participant UserManagement
     participant FolderSelectionScreen
 
-    User->>MindmapApp: run()
+    Käyttäjä->>MindmapApp: run()
     MindmapApp->>MindmapApp: show_loading_screen()
-    Note over MindmapApp: Show LoadingScreen
+    Note over MindmapApp: Näytä LoadingScreen
     MindmapApp->>MindmapApp: show_user_selection_screen()
-    Note over MindmapApp: Show UserSelectionScreen
-    User->>UserSelectionScreen: Click "New User" and input "Bob"
-    UserSelectionScreen->>UserManagement: create_new_user("Bob")
-    UserManagement->>UserManagement: create_user("Bob")
-    Note over UserManagement: Add "Bob" button to UserSelectionScreen
-    User->>UserManagement: Click "Bob" button
-    UserManagement->>MindmapApp: show_folder_selection_screen("Bob")
-    MindmapApp->>FolderSelectionScreen: show("Bob")
-    Note over MindmapApp: Show FolderSelectionScreen
-    User->>FolderSelectionScreen: Click "New Folder" and input "Math"
+    Note over MindmapApp: Näytä UserSelectionScreen
+    Käyttäjä->>UserSelectionScreen: Klikkaa "Uusi käyttäjä" ja syötä "käyttäjä"
+    UserSelectionScreen->>UserManagement: create_new_user("käyttäjä")
+    UserManagement->>UserManagement: create_user("käyttäjä")
+    Note over UserManagement: Lisää "käyttäjä" -painike UserSelectionScreeniin
+    Käyttäjä->>UserManagement: Klikkaa "käyttäjä" -painiketta
+    UserManagement->>MindmapApp: show_folder_selection_screen("käyttäjä")
+    MindmapApp->>FolderSelectionScreen: show("käyttäjä")
+    Note over MindmapApp: Näytä FolderSelectionScreen
+    Käyttäjä->>FolderSelectionScreen: Klikkaa "Uusi kansio" ja syötä "Matematiikka"
     FolderSelectionScreen->>FolderSelectionScreen: new_folder()
-    Note over FolderSelectionScreen: Create "Math" folder and update folder list
+    Note over FolderSelectionScreen: Luo "Matematiikka" -kansio ja päivitä kansioiden luettelo
 
 ```
