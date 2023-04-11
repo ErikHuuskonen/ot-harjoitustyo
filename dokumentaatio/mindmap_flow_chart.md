@@ -1,4 +1,4 @@
-´´´mermaid
+```mermaid
 graph TB
 
 A[Start] --> B[Initialize MindMap]
@@ -16,5 +16,5 @@ G --> C
 H --> C
 I --> C
 J --> C
+```
 
-´´´
