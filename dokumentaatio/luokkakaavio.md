@@ -2,7 +2,30 @@
 classDiagram
 
 class MindmapApp {
-    +MindmapApp(): void
+    +__init__(): void
+    +run(): void
+    +show_loading_screen(): void
+    +show_user_selection_screen(): void
+    +show_folder_selection_screen(user): void
+    +show_mindmap_screen(): void
+    +hide_mindmap_screen(): void
+}
+
+class LoadingScreen {
+    +__init__(window): void
+    +show(): void
+    +hide(): void
+    +exit(): void
+    +get_path(): void
+}
+
+class UserSelectionScreen {
+    +__init__(window, user_management): void
+    +show(): void
+    +hide(): void
+    +create_new_user(): void
+    +select_user(user): void
+    +user_selected_handler(username): void
 }
 
 class UserManagement {
@@ -24,10 +47,6 @@ class FolderSelectionScreen {
     +new_folder(): void
 }
 
-class Node {
-    +__init__(canvas, x, y, text): void
-}
-
 class MindMap {
     +__init__(master): void
     +create_node(event): void
@@ -41,10 +60,12 @@ class MindMap {
     +move_node_stop(event): void
 }
 
+MindmapApp -- LoadingScreen: käyttää
+MindmapApp -- UserSelectionScreen: käyttää
 MindmapApp -- UserManagement: käyttää
 MindmapApp -- FolderSelectionScreen: käyttää
 MindmapApp -- MindMap: käyttää
+UserSelectionScreen -- UserManagement: käyttää
 FolderSelectionScreen -- UserManagement: käyttää
-MindMap -- Node: käyttää
 
 ```
