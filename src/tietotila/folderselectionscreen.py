@@ -3,13 +3,14 @@ from tkinter import simpledialog
 
 class FolderSelectionScreen(tk.Frame):
 
-    def __init__(self, window):
+    def __init__(self, window, on_mindmap_selected=None):
         super().__init__(window)
         self.window = window
         self.top = None  
         self.folders = []
         self.user = None
-        
+        self.on_mindmap_selected = on_mindmap_selected
+
         self.new_folder_button = tk.Button(self, text="New Folder", command=self.new_folder)
         self.new_folder_button.pack(side="left", padx=5, pady=5)
 
@@ -39,7 +40,7 @@ class FolderSelectionScreen(tk.Frame):
             folder_button.pack(side="left", padx=5, pady=5)
 
     def create_folder(self, folder_name, frame):
-        new_button = tk.Button(frame, text=folder_name, command=self.folder_button_pressed, height=2, width=10, background="green")
+        new_button = tk.Button(frame, text=folder_name, command=lambda: self.folder_button_pressed(folder_name), height=2, width=10, background="green")
         new_button.pack(side="left", padx=5, pady=5)
 
         if folder_name not in self.folders:
@@ -50,7 +51,8 @@ class FolderSelectionScreen(tk.Frame):
 
     def folder_button_pressed(self, folder_name): #mene tiedostoon mindmap näkymään. 
         print(f"Folder selected: {folder_name}")
-
+        if self.on_mindmap_selected:
+            self.on_mindmap_selected()
 
     def new_folder(self):
         folder_name = simpledialog.askstring("New Folder", "Enter folder name:")

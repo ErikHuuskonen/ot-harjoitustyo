@@ -1,5 +1,5 @@
 import tkinter as tk
-from folderselectionscreen import FolderSelectionScreen
+from tietotila.folderselectionscreen import FolderSelectionScreen
 
 
 class UserManagement():

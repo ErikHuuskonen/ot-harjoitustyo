@@ -1,6 +1,10 @@
 import unittest
 import tkinter as tk
 from tietotila.loadingscreen import LoadingScreen
+from unittest.mock import MagicMock
+from unittest.mock import Mock, patch
+from unittest.mock import patch
+
 
 class TestLoadingScreen(unittest.TestCase):
     def setUp(self):
@@ -19,6 +23,15 @@ class TestLoadingScreen(unittest.TestCase):
     def check_frame_removed(self):
         self.assertNotIn(self.loading_screen.frame, self.window.winfo_children())
         self.window.quit()
+
+    def test_exit_calls_on_exit(self):
+        with patch.object(self.loading_screen, 'on_exit') as mock_on_exit:
+            self.loading_screen.exit()
+            mock_on_exit.assert_called_once()
+
+    def test_get_path_returns_none(self):
+        path = self.loading_screen.get_path()
+        self.assertIsNone(path)
 
     def tearDown(self):
         self.window.destroy()

@@ -30,3 +30,7 @@ class UserSelectionScreen:
     def select_user(self, user):
         if self.on_user_selected:
             self.on_user_selected(user)
+
+    def user_selected_handler(self, username):
+        self.hide()
+        self.app.show_folder_selection_screen(username)

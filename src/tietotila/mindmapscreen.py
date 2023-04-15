@@ -18,11 +18,13 @@ class MindMap:
         self.master = master
         self.canvas = tk.Canvas(master, width=1000, height=1200, bg='white')
         self.canvas.pack(fill='both', expand=True)
+        self.canvas.pack_forget()
         self.nodes = []
         self.lines = []
         self.master_node = Node(self.canvas, 500, 600, "Master Node")
-        self.nodes.append(self.master_node)  # Add master_node to the nodes list
+        self.nodes.append(self.master_node)  
         self.canvas.bind('<Double-Button-1>', self.create_node)
+        #self.nodes.bind('<Double-Button-1>', self.show_cards) #kortti
         self.canvas.bind_all('<MouseWheel>', self.zoom)
         self.canvas.bind_all('<Button-4>', self.zoom)
         self.canvas.bind_all('<Button-5>', self.zoom)
@@ -111,14 +113,18 @@ class MindMap:
     def move_node_stop(self, event):
         self.moving_node = None
 
-def main():
-    root = tk.Tk()
-    root.title('Mind Map')
-    mind_map = MindMap(root)
-    root.mainloop()
+    #def show_cards(self):
+        #pass
 
-if __name__ == '__main__':
-    main()
+def main():
+    pass
+    #root = tk.Tk()
+    #root.title('Mind Map')
+    #mind_map = MindMap(root)
+    #root.mainloop()
+
+#if __name__ == '__main__':
+    #main()
 
     #bugs:
     #zoomaus jälkeen move canvas ja draw line menee sekaisin
