@@ -25,3 +25,4 @@
 
 -ohjelmalle on luotu 15kpl testejä
 -pylint on otettu käyttöön ja ja olen siivonnut ohjeiden mukaan tiedostoja. 
+-ohjelmalle on tehty alustava luokkakaavio dokumentaatio hakemistoon ja se löytyy nimellä luokkakaavio. 
