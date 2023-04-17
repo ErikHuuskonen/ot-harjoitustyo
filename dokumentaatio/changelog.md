@@ -13,3 +13,15 @@
 -UserSelectionScreen käyttää UserManagement-luokkaa käyttäjien hallintaan
 -MindmapApp-luokan instanssi luodaan ja suoritetaan ohjelman lopussa
 -Koodissa on kommentoitu pois muita komponentteja ja toiminnallisuuksia, kuten FolderSelectionScreen ja MindmapScreen, mutta ne eivät ole käytössä nykyisessä versiossa.
+## viikko4
+-nyt poetry run invoke start komennolla käyttäjälle avautuu aloitus näkymä (ei skaalaudu oikein linuxilla), tämä kestää viisi sekuntia jonka jälkeen käyttäjä valitsee käyttäjän.
+-Käyttäjän valinnasta avautuu käyttäjän oma kansio valinta jossa ei ole kansioita. Käyttäjä voi luoda sellaisen (ei tallennu vielä ) 
+-Tämän jälkeen käyttäjä voi siirtyä kansioonsa, jossa hänelle aukea mindmap pohja jossa on yksi masternode. 
+-Käyttäjä voi luoda uuden noden tupla-klikkaamalla tyhjää aluetta ja syöttämällä noden nimen.
+-Käyttäjä voi siirtää noden paikkaa painamalla shift pohjaan ja raahaamalla nodea.
+-Käyttäjä voi piirtää viivoja yhdistämään kaksi nodea klikkaamalla kahta erillistä nodea.
+-Käyttäjä voi liikkua näkymässä raahaamalla tyhjää aluetta hiirellään.
+-Käyttäjä voi zoomata (+-) midmappia. 
+
+-ohjelmalle on luotu 15kpl testejä
+-pylint on otettu käyttöön ja ja olen siivonnut ohjeiden mukaan tiedostoja
