@@ -1,5 +1,10 @@
 import tkinter as tk
-from tietotila.folderselectionscreen import FolderSelectionScreen
+#from tietotila.folderselectionscreen import FolderSelectionScreen
+import sys
+if "tietotila" in sys.modules:
+    from tietotila.folderselectionscreen import FolderSelectionScreen
+else:
+    from folderselectionscreen import FolderSelectionScreen
 
 
 class UserManagement():
