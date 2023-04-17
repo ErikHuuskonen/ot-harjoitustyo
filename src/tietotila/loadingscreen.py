@@ -3,7 +3,10 @@ Moduulissa luodaan LoadingScreen-luokka, joka sisältää ikkunan latausnäytöl
 Luokka alustetaan antamalla sille window-parametrina tkinter-ikkuna, jonka avulla näyttö voidaan näyttää.
 """
 import tkinter as tk
+import os
+import sys
 from PIL import Image, ImageTk
+
 class LoadingScreen:
     """
     LoadingScreen-luokka, joka sisältää ikkunan latausnäytölle. 
@@ -17,7 +20,9 @@ class LoadingScreen:
         """
         self.window = window
         self.frame = tk.Frame(self.window)
-        image = Image.open("/Users/erikstandard/Desktop/ot-harjoitustyo/resources/tietotila_startingscreen.gif")
+        self.image_name = "tietotila_startingscreen.gif"
+        self.image_path = self.get_path(self.image_name)
+        image = Image.open(self.image_path)
         photo = ImageTk.PhotoImage(image)
         self.image_label = tk.Label(self.frame, image=photo)
         self.image_label.image = photo
@@ -45,8 +50,42 @@ class LoadingScreen:
         """
         if self.on_exit:
             self.on_exit()
-    def get_path(self):
+    
+    
+    def get_path(self, image_path):
         """
         Metodi, joka hakee aloitusnäytön kuvan.
         """
-        
+        def get_project_root():
+            current_file_path = os.path.abspath(__file__)
+            while not os.path.basename(current_file_path) == "ot-harjoitustyo":
+                current_file_path = os.path.dirname(current_file_path)
+            return current_file_path
+            # Tarkista käyttöjärjestelmä
+        platform = sys.platform
+
+        # Määritä projektihakemiston polku
+        project_directory = get_project_root()
+
+        # Määritä kuvahakemiston nimi
+        image_directory_name = "resources"
+
+        # Muodosta kuvahakemiston polku riippuen käyttöjärjestelmästä
+        if platform == "win32":
+            # Windows
+            image_directory_path = os.path.join(project_directory, image_directory_name)
+        elif platform == "darwin":
+            # macOS
+            image_directory_path = os.path.join(project_directory, image_directory_name)
+        elif platform.startswith("linux"):
+            # Linux
+            image_directory_path = os.path.join(project_directory, image_directory_name)
+        else:
+            raise ValueError("Tuntematon käyttöjärjestelmä: " + platform)
+
+        # Muodosta kuvatiedoston polku
+        image_path = os.path.join(image_directory_path, self.image_name)
+
+        return image_path
+
+
