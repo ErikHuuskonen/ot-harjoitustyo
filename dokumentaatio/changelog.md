@@ -24,4 +24,4 @@
 -Käyttäjä voi zoomata (+-) midmappia. 
 
 -ohjelmalle on luotu 15kpl testejä
--pylint on otettu käyttöön ja ja olen siivonnut ohjeiden mukaan tiedostoja
+-pylint on otettu käyttöön ja ja olen siivonnut ohjeiden mukaan tiedostoja. 
