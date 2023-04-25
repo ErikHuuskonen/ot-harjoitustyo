@@ -82,4 +82,3 @@ class FolderSelectionScreen(tk.Frame):
         if folder_name and folder_name.strip():
             self.folders.append(folder_name.strip())
             self.update_folder_list()
-    

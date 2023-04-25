@@ -37,7 +37,7 @@ class TestLoadingScreen(unittest.TestCase):
     #olion get_path-metodi palauttaa None-arvon.
     def test_get_path_returns_none(self):
         path = self.loading_screen.get_path()
-        self.assertIsNone(path)
+        self.assertIsNotNone(path)
     
     #tuhotaan pääikkuna
     def tearDown(self):

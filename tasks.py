@@ -12,3 +12,8 @@ def test(c):
 def generate_coverage_report(c):
     c.run("coverage run --source=src -m pytest src")
     c.run("coverage html")
+
+@task(name="pylint")
+def generate_coverage_report(c):
+    c.run("pylint src/tietotila")
+    
