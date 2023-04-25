@@ -26,3 +26,11 @@
 -ohjelmalle on luotu 15kpl testejä
 -pylint on otettu käyttöön ja ja olen siivonnut ohjeiden mukaan tiedostoja. 
 -ohjelmalle on tehty alustava luokkakaavio dokumentaatio hakemistoon ja se löytyy nimellä luokkakaavio. 
+## viikko5
+-Release1 toiminnallisuudet saavutettu
+-Tähän kuuluu: jokainen mindmap node on muistikorttipakka, nodeja tuplaklikkaamalla avautuu näkymä jossa voi harjoitella muistikortteja ja lisätä niitä.
+-Labtool kommenttien esittämät korjaukset aloitettu eli ui ja logiikka eritelty, mutta tämä tulee vasta release2 vaiheessa
+-Ohjelman suoritus estyi projektin nimen vaihtamisen yhteydessä = tämä johtui ilmeisesti loadingscreen.py moduulissa sijaitsevasta metodista get_path
+joka haki aloitusnäytöllä esitettävän kuvan polun käyttäen projektin nimeä. 
+-pylint ohjeiden mukaan koodia on korjattu ja pylint on nyt task käskyllä tehtävissä
+-sekvennisikaavio on lisätty. Tämä sekä luokkakaavio on nyt osana readme.md
