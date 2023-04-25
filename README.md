@@ -8,7 +8,8 @@ Tietotila on säännölliseen tiedon omaksumiseen tarkoitettu mindmapien ja muis
 - [työaikakirjanpito](https://github.com/ErikHuuskonen/ot-harjoitustyo/blob/main/dokumentaatio/tyoaikakirjanpito.md)
 - [vaatimusmäärittely](https://github.com/ErikHuuskonen/ot-harjoitustyo/blob/main/dokumentaatio/vaatimusmaarittely.md)
 - [chanelog](https://github.com/ErikHuuskonen/ot-harjoitustyo/blob/main/dokumentaatio/changelog.md)
-
+- [alustava rakenne luokkakaaviona](https://github.com/ErikHuuskonen/ot-harjoitustyo/blob/main/dokumentaatio/alustava_luokkakaavio.md)
+- [sekvenssikaavio](https://github.com/ErikHuuskonen/ot-harjoitustyo/blob/main/dokumentaatio/sekvenssikaavio.md)
 ## Asennus ja käyttö
 
 1. Lataa repositorio /tmp hakemistoon:
@@ -45,5 +46,9 @@ Testikattavuusraportti komennolla:
 poetry run invoke coverage-report
 ```
 
+Pylint raportti komennolla: 
 
+```bash
+poetry run invoke pylint
+```
 
