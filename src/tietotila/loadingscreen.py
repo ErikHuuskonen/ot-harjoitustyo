@@ -53,22 +53,11 @@ class LoadingScreen:
         """
         Metodi, joka hakee aloitusnäytön kuvan.
         """
-        def get_project_root():
-            current_file_path = os.path.abspath(__file__)
-            while not os.path.basename(current_file_path) == "ot-harjoitustyo":
-                current_file_path = os.path.dirname(current_file_path)
-            return current_file_path
-            # Tarkista käyttöjärjestelmä
         platform = sys.platform
-        project_directory = get_project_root()
         image_directory_name = "resources"
-        if platform == "win32":
-            image_directory_path = os.path.join(project_directory, image_directory_name)
-        elif platform == "darwin":
-            image_directory_path = os.path.join(project_directory, image_directory_name)
-        elif platform.startswith("linux"):
-            image_directory_path = os.path.join(project_directory, image_directory_name)
-        else:
-            raise ValueError("Tuntematon käyttöjärjestelmä: " + platform)
+        current_directory = os.path.dirname(os.path.abspath(__file__))
+        src_directory = os.path.dirname(current_directory)
+        project_directory = os.path.dirname(src_directory)
+        image_directory_path = os.path.join(project_directory, image_directory_name)
         image_path = os.path.join(image_directory_path, self.image_name)
-        return image_path  
+        return image_path
