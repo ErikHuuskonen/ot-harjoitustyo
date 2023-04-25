@@ -11,7 +11,6 @@
 | 15.4   | 4       | mindmap näkymän aloittaminen|
 | 16.4   | 1       | jatkoa mindmap|
 | 17.4   | 5       | perusta mindmapille kunnossa, muutama bugi|
-
 | 20.4   | 3h      | deck ja card toiminnallisuus|
 | 21.4   | 1.5     | deck ja card toiminnallisuus|
 | 24.4.  | 2       | ui ja logic erittely|
