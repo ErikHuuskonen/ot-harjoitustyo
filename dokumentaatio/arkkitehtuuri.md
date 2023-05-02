@@ -31,10 +31,15 @@ B --> A
 Käyttöliittymä sisältää kuusi erillistä näkymää:
 
 -latausnäyttö
+
 -käyttäjän valinta ja luominen
+
 -kansion valinta ja luominen
+
 -miellekartta näkymä
+
 -muistikorttien luomiseen tarkoitettu näkymä
+
 -muistikorttien harjoitteluun tarkoitettu näkymä
 
 Jokainen näkymä käyttöliittymässä on toteutettu omana luokkanaan ja useat niistä sijaitsevat eri moduuleissa. 
