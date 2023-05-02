@@ -34,3 +34,6 @@
 joka haki aloitusnäytöllä esitettävän kuvan polun käyttäen projektin nimeä. 
 -pylint ohjeiden mukaan koodia on korjattu ja pylint on nyt task käskyllä tehtävissä
 -sekvennisikaavio on lisätty. Tämä sekä luokkakaavio on nyt osana readme.md
+## viikko6
+Kopion valitettavasti väärän linkin labtoolin code review kohtaan joten tässä on katselmointiini vievä linkki. Olen pahoillani virheen aiheuttamasta vaivasta ja toivon että se ei vähennä pisteitäni. 
+[koodikatselmointi](https://github.com/ttuukka/ot-harjoitustyo/issues/1)
