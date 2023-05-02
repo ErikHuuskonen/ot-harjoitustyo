@@ -38,3 +38,7 @@ joka haki aloitusnäytöllä esitettävän kuvan polun käyttäen projektin nime
 ## viikko6
 Kopion valitettavasti väärän linkin labtoolin code review kohtaan joten tässä on katselmointiini vievä linkki. Olen pahoillani virheen aiheuttamasta vaivasta ja toivon että se ei vähennä pisteitäni. 
 [koodikatselmointi](https://github.com/ttuukka/ot-harjoitustyo/issues/1)
+Tällä viikolla ohjelma sai tiedostojen tallentamiseen liittyviä perustoiminallisuuksia. 
+Arkkitehtuuri kuvaus ja käyttöhje luotu
+Lisäksi release on tehty
+
