@@ -91,5 +91,5 @@ Ohjelmani rakenteeseen on jääynyt ainakin seuraavat heikkoudet:
 
 - Ohjelman ui ja logic eivät ole tarpeeksi hyvin eritelty
 
--Ohjelmani kansiorakenne ja moduulien nimeäminen on sekavaa
+- Ohjelmani kansiorakenne ja moduulien nimeäminen on sekavaa
 
