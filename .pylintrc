@@ -400,9 +400,8 @@ logging-format-style=old
 # function parameter format.
 logging-modules=logging
 
-
+disable=invalid-name, import-error, attribute-defined-outside-init
 [MESSAGES CONTROL]
-
 # Only show warnings with the listed confidence levels. Leave empty to show
 # all. Valid levels: HIGH, CONTROL_FLOW, INFERENCE, INFERENCE_FAILURE,
 # UNDEFINED.
