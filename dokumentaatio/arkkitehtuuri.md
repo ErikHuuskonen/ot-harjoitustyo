@@ -86,3 +86,10 @@ Ohjelman päätoiminnallisuudet ovat seuraavat:
 -Miellekartan avulla quizlet ja anki tyylisten muistikortti kokonaisuuksien luominen ja hallinta
 
 ## Ohjelman rakenteeseen jääneet heikkoudet
+
+Ohjelmani rakenteeseen on jääynyt ainakin seuraavat heikkoudet:
+
+- Ohjelman ui ja logic eivät ole tarpeeksi hyvin eritelty
+
+-Ohjelmani kansiorakenne ja moduulien nimeäminen on sekavaa
+
