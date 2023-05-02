@@ -5,22 +5,19 @@ Titetotila on säännölliseen tiedon omaksumiseen liittyvien päätösten tekem
 ![](https://github.com/ErikHuuskonen/ot-harjoitustyo/blob/main/dokumentaatio/Ka%CC%88ytto%CC%88liittyma%CC%88luonnos.png)
 
 # Toiminnallisuus
--Ensimmäisessä vaiheessa käyttäjä luo itselleen profiilin sovellukseen. Profiilin tarkoituksena on erotella laitteen ja sovelluksen mahdolliset käyttäjät ja heidän tekemät muutoksensa. 
+-Ensimmäisessä vaiheessa käyttäjä luo itselleen profiilin sovellukseen. Profiilin tarkoituksena on erotella laitteen ja sovelluksen mahdolliset käyttäjät ja heidän tekemät muutoksensa. TEHTY
 
--Toisessa vaiheessa käyttäjä valitsee mihin neljästä [The Tree of Knowledge (ToK) System](https://en.wikipedia.org/wiki/Tree_of_knowledge_system) tiedon kategoriasta hän on lisäämässä kohtaamaansa informaatiota. Tämän askeleen on tarkoitus luoda merkitystä ja mahdollistaa uuden omaksuttavan tiedon sijoittamista suurempaan kokonaisuuteen.
+-Toisessa vaiheessa käyttäjä valitsee erilisessä ikunassa olemassa olevan tiedoston tai luo uuden sallaisen. TEHTY
 
--Kolmannessa vaiheessa käyttäjä näkee valitsemansa kategorian sisällä sijaitsevat mind-map tiesostot jotka käyttäjä on itse otsikoinut (mikäli ne ovat luotu)
+-Kolmannessa vaiheessa käyttäjä on valinnut mind-map tiedoston jonka keskiössä on tiedoston otsikko ja käyttäjä voi laajentaa visuaalista kuvausta kohtaamastaan informaatiosta.  TEHTY
 
--Neljännessä vaiheessa käyttäjä on valinnut mind-map tiedoston jonka keskiössä on tiedoston otsikko ja käyttäjä voi laajentaa visuaalista kuvausta kohtaamastaan informaatiosta. 
 
 # Jatkokehitys
 Ajan sanelemana seuraavia toiminnallisuuksia on mahdollista lisätä:
 
-1.Jokainen mind-map node on muistikortti pakka
+1.Jokainen mind-map node on muistikortti pakka TEHTY
 
 2.Muistikortteja voi harjoitella [unohtamiskäyrää](https://en.wikipedia.org/wiki/Forgetting_curve) mukailevan algoritmin avulla.
-
-3.3D mind-map
 
 4.Node väri pohjautuu active recall menestykseen unohtamiskäyrän ja harjoittelun sanelemana.
 
