@@ -17,3 +17,10 @@ def generate_coverage_report(c):
 def generate_pylint_report(c):
     #c.run("pylint src/tietotila")
     c.run("pylint src/tietotila/usermanagement.py src/tietotila/foldermanagement.py src/tietotila/mindmapmanagement.py")
+
+@task(name="build")
+def build(c):
+    c.run("git clone https://github.com/ErikHuuskonen/ot-harjoitustyo.git")
+    c.run("ot-harjoitustyo")
+    c.run("poetry install")
+    c.run("python src/tietotila/main.py")
