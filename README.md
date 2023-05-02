@@ -10,6 +10,7 @@ Tietotila on säännölliseen tiedon omaksumiseen tarkoitettu mindmapien ja muis
 - [chanelog](https://github.com/ErikHuuskonen/ot-harjoitustyo/blob/main/dokumentaatio/changelog.md)
 - [alustava rakenne luokkakaaviona](https://github.com/ErikHuuskonen/ot-harjoitustyo/blob/main/dokumentaatio/alustava_luokkakaavio.md)
 - [sekvenssikaavio](https://github.com/ErikHuuskonen/ot-harjoitustyo/blob/main/dokumentaatio/sekvenssikaavio.md)
+- [arkkitehtuurikuvaus](https://github.com/ErikHuuskonen/ot-harjoitustyo/blob/main/dokumentaatio/arkkitehtuuri.md)
 ## Asennus ja käyttö
 
 1. Lataa repositorio /tmp hakemistoon:
