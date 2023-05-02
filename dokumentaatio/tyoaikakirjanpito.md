@@ -15,4 +15,8 @@
 | 21.4   | 1.5     | deck ja card toiminnallisuus|
 | 24.4.  | 2       | ui ja logic erittely|
 | 25.4.  | 6h      | labtool kommenttien hiomista|
-| **Yhteensä** | **49**   |           |
+| 27.4.  | 8h      | Ohjelman tiedostojen tallentaminen|
+| 30.4.  | 1.5h    | Ohjelman tiedostojen tallentaminen |
+| 25.4.  | 4h      | Dokumentoini ja pylint siivous |
+| 2.4.  | 7.5h     | Viikon kuusi dokumentointi vaatimuksia|
+| **Yhteensä** | **70**   |           |
