@@ -42,3 +42,9 @@ Tällä viikolla ohjelma sai tiedostojen tallentamiseen liittyviä perustoiminal
 Arkkitehtuuri kuvaus ja käyttöhje luotu
 Lisäksi release on tehty
 
+## viikko7
+-Tein koodikatselmoinnin.
+
+-Olen puuttunut labtoolissa ja koodi katselmoinnissa saamiini kehitys kehoituksiin ja yrittänyt muotoilla ohjelman kansiorakennetta järkevämmäksi. 
+
+-Lisäksi olen viimeistellyt docstring dokumentoinnin ja kamppaillut pitkään sovelluksen käyttöjärjestelmän ja toimintalogiikan erottamisessa, siinä onnistumatta. 
