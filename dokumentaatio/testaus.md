@@ -4,5 +4,8 @@ Ohjelmani graafinen käyttöliittymä ja toimintalogiikka on huonosti eroteltu, 
 
 ### Sovelluslogiikka
 
+Haarautumakattavuus on 54%
+
 Sovelluslogiikan testit tuottivat seuraavan tuloksen: 
-![](./dokumentaatio/kuvat/coverage_report.png)
+
+![](./kuvat/coverage_report.png)
