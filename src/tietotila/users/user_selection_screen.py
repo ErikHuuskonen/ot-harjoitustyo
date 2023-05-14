@@ -12,7 +12,13 @@ class UserSelectionScreen:
 
     def __init__(self, window, user_management, history: dict):
         """
-        Alustaa ikkunan, käyttäjähallinnan, kehyksen, otsikon ja "New User" -painikkeen. Asettaa käyttäjän valitsemisen käsittelijän arvoksi None.
+        Alustaa ikkunan, käyttäjähallinnan, kehyksen, otsikon ja "New User" -painikkeen. 
+        Asettaa käyttäjän valitsemisen käsittelijän arvoksi None.
+
+        Args:
+            window: Toplevel-ikkunan isäntäwidget.
+            user_management: Käyttäjänhallintaluokan instanssi.
+            history: Sanakirja, joka sisältää käyttäjien historian tiedot.
         """
         self.window = window
         self.user_management = user_management
@@ -30,7 +36,7 @@ class UserSelectionScreen:
         Näyttää kehyksen.
         """
         self.frame.pack(fill=tk.BOTH, expand=True)
-        for key, value in self.history.items():
+        for key in self.history:
             self.user_management.create_user(key, self.frame)
 
     def hide(self):
@@ -51,13 +57,10 @@ class UserSelectionScreen:
     def select_user(self, user):
         """
         Valitsee käyttäjän kutsuen on_user_selected-käsittelijää, jos se on määritelty.
-        """
-        if self.on_user_selected:
-            self.on_user_selected(user)
 
-    def user_selected_handler(self, username):
+        Args:
+            user: Merkkijono, joka kuvaa valittua käyttäjää.
         """
-        Piilottaa käyttäjän valintanäkymän ja näyttää kansioiden valintanäkymän valitulle käyttäjälle.
-        """
-        self.hide()
-        self.app.show_folder_selection_screen(username)
+        if callable(self.on_user_selected):
+            # pylint: disable=not-callable
+            self.on_user_selected(user)

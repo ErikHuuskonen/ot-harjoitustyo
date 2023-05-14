@@ -18,7 +18,7 @@ Luokat:
 """
 import tkinter as tk
 from tkinter import simpledialog
-import atexit
+from pathlib import Path
 
 
 class DeckView(tk.Toplevel):
@@ -29,13 +29,19 @@ class DeckView(tk.Toplevel):
     def __init__(self, master, deck):
         """
         Alustaa DeckView-olion ja asettaa sen perustiedot.
+        
+        Args:
+            master: 
+                Toplevel-ikkunan isäntäwidget.
+            deck: 
+                Deck-olio, joka esittää pakkaa, jota hallinnoidaan.
         """
         super().__init__(master)
         self.title("Pakka: " + deck.name)
         self.deck = deck
         self.card_index = 0
         self.showing_answer = False
-        self.current_card_index = 0  # lisätty
+        self.current_card_index = 0
         self.pass_count = 0
         self.dont_remember_count = 0
         self.almost_count = 0
@@ -82,12 +88,12 @@ class DeckView(tk.Toplevel):
         self.front_label = tk.Label(self, text="Etupuoli:")
         self.front_label.grid(row=1, column=0, sticky='w')
         self.front_entry = tk.Text(self, bg="white", fg="black", insertbackground="black",
-                                   height=2, bd=0, highlightthickness=1, highlightbackground="black")  # muutos
+                                   height=2, bd=0, highlightthickness=1, highlightbackground="black")
         self.front_entry.grid(row=1, column=1, sticky='ew')
         self.back_label = tk.Label(self, text="Takapuoli:")
         self.back_label.grid(row=2, column=0, sticky='w')
         self.back_entry = tk.Text(self, bg="white", fg="black", insertbackground="black",
-                                  height=2, bd=0, highlightthickness=1, highlightbackground="black")  # muutos
+                                  height=2, bd=0, highlightthickness=1, highlightbackground="black")
         self.back_entry.grid(row=2, column=1, sticky='ew')
         self.save_button = tk.Button(
             self, text="Tallenna", command=self.save_card)
@@ -107,7 +113,7 @@ class DeckView(tk.Toplevel):
         """
         if len(self.deck.cards) == 0:
             return
-        elif len(self.deck.cards) > 0:
+        if len(self.deck.cards) > 0:
             if self.current_card_index < len(self.deck.cards):
                 self.card_label.config(
                     text=self.deck.cards[self.current_card_index].front_text)
@@ -118,22 +124,12 @@ class DeckView(tk.Toplevel):
         Tallentaa käyttäjän syöttämän kortin.
         """
         front_text = self.front_entry.get(1.0, tk.END).strip()
-        print(front_text)
         back_text = self.back_entry.get(1.0, tk.END).strip()
-        print(back_text)
         if front_text and back_text:
             card = Card(front_text, back_text)
             self.deck.add_card(card)
-            print("kortti lisätty")
-            # Tulosta kaikki kortit listasta
-            print(self.deck.cards)
-            for i, card in enumerate(self.deck.cards):
-                print(f"Kortti {i + 1}:")
-                print(f"  Etupuoli: {card.front_text}")
-                print(f"  Takapuoli: {card.back_text}")
             self.front_entry.delete(1.0, tk.END)
             self.back_entry.delete(1.0, tk.END)
-            print("valmiina ottammaan vastaan uuden kortin.")
             self.add_card_view()
             self.update()
         else:
@@ -168,6 +164,10 @@ class DeckView(tk.Toplevel):
     def next_card(self, answer_quality):
         """
         Siirtyy seuraavaan korttiin ja tallentaa käyttäjän arvioinnin.
+        
+        Args:
+            answer_quality: 
+                Merkkijono, joka kuvastaa käyttäjän arviota edellisestä kortista.
         """
         if answer_quality == "pass":
             self.pass_count += 1
@@ -180,7 +180,7 @@ class DeckView(tk.Toplevel):
         self.card_index = (self.card_index + 1) % len(self.deck.cards)
         self.update_deck_view()
         self.card_label.config(
-            text=self.deck.cards[self.card_index].front_text)  # Muuta tämä rivi
+            text=self.deck.cards[self.card_index].front_text)
         self.show_answer_button.config(text="Näytä vastaus")
         self.showing_answer = False
         self.pass_button.destroy()
@@ -206,6 +206,9 @@ class Deck:
     def __init__(self, name):
         """
         Alustaa pakan nimen ja tyhjän korttilistan.
+        Args:
+            name: 
+                Merkkijono, joka esittää pakan nimeä.
         """
         self.name = name
         self.cards = []
@@ -213,20 +216,28 @@ class Deck:
     def add_card(self, card):
         """
         Lisää kortin pakan korttilistaan.
+        
+        Args:
+            card: 
+                Card-olio, joka lisätään pakan korttilistaan.
         """
         self.cards.append(card)
-        print(
-            f"Nyt ollaan Deck luokassa ja painettiin add card to deck ja tässä self.cards lista{self.cards}")
 
     def remove_card(self, card):
         """
         Poistaa kortin pakan korttilistasta.
+        Args:
+            card: 
+                Card-olio, joka poistetaan pakan korttilistasta.
         """
         self.cards.remove(card)
 
     def show_deck(self, master):
         """
         Näyttää pakan sisällön DeckView-luokan avulla.
+        Args:
+            master: 
+                Toplevel-ikkunan isäntäwidget.
         """
         DeckView(master, self)
 
@@ -239,6 +250,12 @@ class Card:
     def __init__(self, front_text, back_text):
         """
         Alustaa kortin etu- ja takapuolen tekstit.
+
+        Args:
+            front_text: 
+                Merkkijono, joka esittää kortin etupuolen tekstin.
+            back_text: 
+                Merkkijono, joka esittää kortin takapuolen tekstin.
         """
         self.front_text = front_text
         self.back_text = back_text
@@ -252,17 +269,27 @@ class Node:
     def __init__(self, canvas, x, y, text):
         """
         Luo uuden solmun ja alustaa sen koordinaatit, tekstin ja pakan.
+        
+        Args:
+            canvas: 
+                Canvas-olio, jossa solmu piirretään.
+            x: 
+                Kokonaisluku, joka esittää solmun x-koordinaatin.
+            y: 
+                Kokonaisluku, joka esittää solmun y-koordinaatin.
+            text: 
+                Merkkijono, joka esittää solmun tekstin.
         """
         self.canvas = canvas
         width = 80
         height = 120
         self.id = canvas.create_rectangle(
             x - width / 2, y - height / 2, x + width / 2, y + height / 2, fill='black', outline='black', width=2)
-        self.text_id = canvas.create_text(x, y, text=text, font=('Arial', 12))
+        self.text_id = canvas.create_text(x, y, text=text, fill='white', font=('Arial', 12))
         self.x = x
         self.y = y
         self.text = text
-        self.deck = Deck(text)  # Lisää tämä rivi
+        self.deck = Deck(text)
 
     def show_deck(self):
         """
@@ -273,8 +300,13 @@ class Node:
     def add_card_to_deck(self, card_text):
         """
         Lisää kortin solmun pakan korttilistaan.
+        
+        Args:
+            card_text: 
+                Merkkijono, joka esittää kortin etupuolen tekstin.
         """
-        card = Card(card_text)
+        back_tex = ""
+        card = Card(card_text, back_tex)
         self.deck.add_card(card)
 
 
@@ -286,10 +318,16 @@ class MindMap:
     def __init__(self, master):
         """
         Alustaa miellekartan ja lisää solmut sekä viivat.
+        Args:
+            master: 
+                Toplevel-ikkunan isäntäwidget.
         """
         self.master = master
         self.canvas = tk.Canvas(master, width=1000, height=1200, bg='white')
         self.canvas.pack(fill='both', expand=True)
+        self.back_button = tk.Button(
+            self.master, text="Takaisin", command=self.go_back)
+        self.back_button.pack(side='top', anchor='nw')
         self.canvas.pack_forget()
         self.nodes = []
         self.lines = []
@@ -309,12 +347,16 @@ class MindMap:
         self.current_line = None
         self.moving_node = None
         self.drag_data = {"x": 0, "y": 0}
-        self.user = None
-        self.folder = None
+        self.user = ""
+        self.folder = ""
 
     def create_node(self, event):
         """
         Luo uuden solmun ja lisää sen miellekarttaan.
+        
+        Args:
+            event: 
+                Hiiren painallustapahtuma, joka sisältää koordinaatit x ja y.
         """
         x, y = event.x, event.y
         text = simpledialog.askstring('Node Text', 'Enter node text:')
@@ -325,9 +367,14 @@ class MindMap:
     def get_node(self, x, y):
         """
         Palauttaa solmun annetuilla koordinaateilla, jos sellainen on olemassa.
+        
+        Args:
+            x: Kokonaisluku, joka esittää solmun x-koordinaatin.
+            y: Kokonaisluku, joka esittää solmun y-koordinaatin.
         """
         for node in self.nodes:
-            if (x > node.x - 80 / 2) and (x < node.x + 80 / 2) and (y > node.y - 120 / 2) and (y < node.y + 120 / 2):
+            if node.x - 80 / 2 < x < node.x + 80 / 2 and node.y - 120 / 2 < y < node.y + 120 / 2:
+            #if (x > node.x - 80 / 2) and (x < node.x + 80 / 2) and (y > node.y - 120 / 2) and (y < node.y + 120 / 2):
                 return node
         return None
 
@@ -347,6 +394,9 @@ class MindMap:
     def on_left_button_motion(self, event):
         """
         Päivittää viivan piirtämistä tai liikuttaa miellekarttaa.
+
+        Args:
+            event: Hiiren painallustapahtuma, joka sisältää koordinaatit x ja y.
         """
         if self.line_start_node and self.current_line:
             self.canvas.coords(self.current_line, self.line_start_node.x,
@@ -361,6 +411,9 @@ class MindMap:
     def on_left_button_release(self, event):
         """
         Lopettaa viivan piirtämisen tai liikkumisen.
+
+        Args:
+            event: Hiiren liiketapahtuma, joka sisältää koordinaatit x ja y.
         """
         if self.line_start_node and self.current_line:
             node = self.get_node(event.x, event.y)
@@ -376,6 +429,9 @@ class MindMap:
     def zoom(self, event):
         """
         Zoomaa miellekarttaa sisään tai ulos.
+
+        Args:
+            event: Hiiren pyörätapahtuma, joka sisältää delta-arvon ja numeron.
         """
         if event.num == 4 or event.delta > 0:
             factor = 1.1
@@ -387,6 +443,9 @@ class MindMap:
     def move_node_start(self, event):
         """
         Aloittaa solmun siirtämisen.
+
+        Args:
+            event: Hiiren painallustapahtuma, joka sisältää koordinaatit x ja y.
         """
         node = self.get_node(event.x, event.y)
         if node:
@@ -395,6 +454,9 @@ class MindMap:
     def move_node(self, event):
         """
         Siirtää solmua.
+
+        Args:
+            event: Hiiren liiketapahtuma, joka sisältää koordinaatit x ja y.
         """
         if self.moving_node:
             dx = event.x - self.moving_node.x
@@ -415,12 +477,18 @@ class MindMap:
     def move_node_stop(self, event):
         """
         Lopettaa solmun siirtämisen.
+
+        Args:
+            event: Hiiren vapautustapahtuma, joka sisältää koordinaatit x ja y.
         """
         self.moving_node = None
 
     def on_double_click(self, event):
         """
         Näyttää solmun pakan sisällön tai luo uuden solmun.
+
+        Args:
+            event: Hiiren kaksoispainallustapahtuma, joka sisältää koordinaatit x ja y.
         """
         node = self.get_node(event.x, event.y)
         if node:
@@ -429,5 +497,22 @@ class MindMap:
             self.create_node(event)
 
     def get_path(self, user, folder):
+        """
+        Hakee history/user/folder.pickle tiedoston polun 
+
+        Args:
+            user: Merkkijono, joka kuvaa käyttäjän nimeä.
+            folder: Merkkijono
+        """
         self.user = user
         self.folder = folder
+        current_file_path = Path(__file__).resolve()
+        project_root = current_file_path.parent.parent
+        pickle_file_path = project_root / "history" / \
+            f"{self.user}" / f"{self.folder}.pickle"
+        return pickle_file_path
+
+    def go_back(self):
+        """
+        Palaa takaisin
+        """

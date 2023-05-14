@@ -7,18 +7,20 @@ ja siinä on luokkia, jotka vastaavat eri näkymistä ja käyttöliittymän toim
 """
 import tkinter as tk
 import os
-from usermanagement import UserManagement
-from loadingscreen import LoadingScreen
-from userselectionscreen import UserSelectionScreen
-from folderselectionscreen import FolderSelectionScreen
-from foldermanagement import FolderManagement
-from mindmapscreen import MindMap
+import inspect
+from src.tietotila.users.user_management import UserManagement
+from src.tietotila.loading_screen.loading_screen import LoadingScreen
+from src.tietotila.users.user_selection_screen import UserSelectionScreen
+from src.tietotila.folders.folder_selection_screen import FolderSelectionScreen
+from src.tietotila.mindmaps.mindmap_screen import MindMap
 
 
-class MindmapApp:
+class MindmapApp():
     """
-    Tämä luokka muodostaa mindmap sovelluksen käyttämiseen tarvittavat moduulit ja luokat. 
-    Se sisältää funktiot eri näkyminen välillä siirtymiseen sekä kutsuu kunkin moduulin luokan konstruktoria.
+    Tämä luokka muodostaa mindmap sovelluksen 
+    käyttämiseen tarvittavat moduulit ja luokat. 
+    Se sisältää funktiot eri näkyminen välillä 
+    siirtymiseen sekä kutsuu kunkin moduulin luokan konstruktoria.
     """
 
     def __init__(self):
@@ -64,16 +66,19 @@ class MindmapApp:
     def show_folder_selection_screen(self, user):
         """
         funktio joka näyttää kansion (mindmap) valinta näkymän
+
+        Args:
+            user:
+                Valitun (tietyn käyttäjän) nimi
         """
         self.user_selection_screen.hide()
         self.folder_selection_screen.show(user)
 
-    def show_mindmap_screen(self, user, folder):
+    def show_mindmap_screen(self):
         """
         funktio joka näyttää mindmap kanvaksen
         """
         self.folder_selection_screen.hide()
-        self.mindmap_screen.get_path(user, folder)
         self.mindmap_screen.canvas.pack(fill='both', expand=True)
 
     def hide_mindmap_screen(self):
@@ -87,33 +92,25 @@ class MindmapApp:
         Tämä metodi hakee ohjelman kansiorakenteesta kansion history sisältämät käyttäjät 
         ja niiden sisältämät tiedostot 
         """
-        current_file_path = os.path.abspath(__file__)
-        project_root = os.path.dirname(os.path.dirname(current_file_path))
-        history_path = os.path.join(project_root, "history")
-
+        current_file_path = os.path.abspath(
+            inspect.getfile(inspect.currentframe()))
+        app_folder_path = os.path.dirname(
+            current_file_path)
+        tietotila_folder_path = os.path.dirname(
+            app_folder_path)
+        src_folder_path = os.path.dirname(
+            tietotila_folder_path)
+        history_path = os.path.join(src_folder_path, "history")
         user_files_dict = {}
-
-        # Tarkista onko history-kansio tyhjä
         if not os.listdir(history_path):
-            print("History-kansio on tyhjä.")
             return user_files_dict
-
-        # Käy läpi history-kansion alikansiot (käyttäjät)
         for user_folder in os.listdir(history_path):
             user_folder_path = os.path.join(history_path, user_folder)
-
-            # Tarkista, että se on kansio
             if os.path.isdir(user_folder_path):
                 pickle_files = []
-
-                # Käy läpi käyttäjän kansio ja etsi .pickle-tiedostot
                 for file in os.listdir(user_folder_path):
                     file_path = os.path.join(user_folder_path, file)
-
-                    # Tarkista, että se on tiedosto ja sillä on .pickle-pääte
                     if os.path.isfile(file_path) and file.endswith('.pickle'):
-                        pickle_files.append(file[:-7])  # poista .pickle-pääte
-
-                # Lisää käyttäjän tiedot sanakirjaan
+                        pickle_files.append(file[:-7])
                 user_files_dict[user_folder] = pickle_files
         return user_files_dict
