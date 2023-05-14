@@ -17,6 +17,12 @@
 | 25.4.  | 6h      | labtool kommenttien hiomista|
 | 27.4.  | 8h      | Ohjelman tiedostojen tallentaminen|
 | 30.4.  | 1.5h    | Ohjelman tiedostojen tallentaminen |
-| 25.4.  | 4h      | Dokumentoini ja pylint siivous |
-| 2.4.  | 7.5h     | Viikon kuusi dokumentointi vaatimuksia|
-| **Yhteensä** | **70**   |           |
+| 1.5.   | 4h       | Dokumentoini ja pylint siivous |
+| 2.5.   | 7.5h     | Viikon kuusi dokumentointi vaatimuksia|
+| 5.5    | 5h.      |   ui ja logiikka erottelua |
+|  7.5   | 2h.      |    ui ja logiikka erottelua  |
+| 11.5   | 6h       |    ui ja logiikka erottelua |
+| 12.5   | 1h.      |     palautukseen valmistautumista |
+| 13.5   | 4h       | Labtool kommenttejen korjailua|
+| 14.5   | 6h       |Dokumentoinnin viimeistelyä ja palautus |
+| **Yhteensä** | **104**   |           |
