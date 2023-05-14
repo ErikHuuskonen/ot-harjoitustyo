@@ -5,4 +5,4 @@ Ohjelmani graafinen käyttöliittymä ja toimintalogiikka on huonosti eroteltu, 
 ### Sovelluslogiikka
 
 Sovelluslogiikan testit tuottivat seuraavan tuloksen: 
-![](.https://github.com/ErikHuuskonen/ot-harjoitustyo/blob/main/dokumentaatio/kuvat/coverage_report.png)
+![](./dokumentaatio/kuvat/coverage_report.png)
