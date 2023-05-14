@@ -14,6 +14,7 @@ Tietotila on säännölliseen tiedon omaksumiseen tarkoitettu mindmapien ja muis
 - [käyttöohje](https://github.com/ErikHuuskonen/ot-harjoitustyo/blob/main/dokumentaatio/k%C3%A4ytt%C3%B6ohje.md)
 - [release1](https://github.com/ErikHuuskonen/ot-harjoitustyo/releases/tag/v1.0.0)
 - [release2](https://github.com/ErikHuuskonen/ot-harjoitustyo/releases/tag/v2.0.0)
+- [final release](https://github.com/ErikHuuskonen/ot-harjoitustyo/releases/tag/v3.0)
 ## Asennus ja käyttö
 
 1. Lataa repositorio /tmp hakemistoon:
