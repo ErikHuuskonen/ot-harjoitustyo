@@ -4,9 +4,9 @@ Titetotila on säännölliseen tiedon omaksumiseen liittyvien päätösten tekem
 # Toiminnallisuus
 -Ensimmäisessä vaiheessa käyttäjä luo itselleen profiilin sovellukseen. Profiilin tarkoituksena on erotella laitteen ja sovelluksen mahdolliset käyttäjät ja heidän tekemät muutoksensa. 
 
--Toisessa vaiheessa käyttäjä valitsee erilisessä ikunassa olemassa olevan tiedoston tai luo uuden sallaisen. TEHTY
+-Toisessa vaiheessa käyttäjä valitsee erilisessä ikunassa olemassa olevan tiedoston tai luo uuden sallaisen. 
 
--Kolmannessa vaiheessa käyttäjä on valinnut mind-map tiedoston jonka keskiössä on master node ja käyttäjä voi laajentaa visuaalista kuvausta kohtaamastaan informaatiosta.  TEHTY
+-Kolmannessa vaiheessa käyttäjä on valinnut mind-map tiedoston jonka keskiössä on master node ja käyttäjä voi laajentaa visuaalista kuvausta kohtaamastaan informaatiosta.  
 
 -Neljännessä vaiheessa käyttäjä voi luoda, siirtää ja yhdistää mindmap nodeja, joista kukin edustaa eräänlaista muistikortti pakkaa. 
 
